@@ -4,37 +4,15 @@
   <div class="container">
       <div class="todo">
         <div class="input-panel">
-          <input type="text" placeholder="Todo">
-          <button class="add-btn">Add</button>
+          <input type="text" placeholder="Todo" #newTask>
+          <button (click) ="add(newTask.value)" class="add-btn">Add</button>
         </div>
       </div>
       <table>
-        <tr class="even">
+        <tr  *ngFor="let task of tasks" class="even">
           <td>
             <pre>
-              Visit
-            </pre>
-          </td>
-          <td>
-            <button class="remove-btn">X</button>
-            <button class="done-btn">Done</button>
-          </td>
-        </tr>
-        <tr class="odd">
-          <td>
-            <pre>
-              Call
-            </pre>
-          </td>
-          <td>
-            <button class="remove-btn">X</button>
-            <button class="done-btn">Done</button>
-          </td>
-        </tr>
-        <tr class="even">
-          <td>
-            <pre>
-              Gym
+              {{task}}
             </pre>
           </td>
           <td>
