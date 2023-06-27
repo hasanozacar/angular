@@ -4,6 +4,7 @@ import { CalendarComponent } from './calendar.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatDatepickerModule } from "@angular/material/datepicker";
+import { RouterModule } from "@angular/router";
 
 
 
@@ -15,7 +16,8 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
     CommonModule,
     BrowserAnimationsModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    RouterModule
   ],
   exports: [
       CalendarComponent
