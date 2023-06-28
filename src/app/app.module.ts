@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoListModule } from './todo-list/todo-list.module';
 import { CalendarModule } from './calendar/calendar.module';
+import { TaskService } from './todo-list/task.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { CalendarModule } from './calendar/calendar.module';
     TodoListModule,
     CalendarModule,
   ],
-  providers: [],
+  providers:[TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
