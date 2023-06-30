@@ -16,7 +16,7 @@ export class TodoListComponent {
     private taskService: TaskService
     ) {}
   newTask:NewTask =new NewTask();
-  tasks=this.taskService.getAllTasks();
+  tasks=this.taskService.getAllTasks(this.route.snapshot.params["date"]);
 
   ngOnInit(): void {
     var strDate = this.route.snapshot.params["date"];
@@ -30,7 +30,7 @@ export class TodoListComponent {
       if(todoNgForm.valid==false)
       return;
 
-   this.taskService.addTask(this.newTask)
+   this.taskService.addTask(this.newTask.date, this.newTask)
     todoNgForm.reset({date: this.newTask.date})
     this.newTask.title = "";
   }
@@ -39,7 +39,7 @@ export class TodoListComponent {
       "Are you sure you want to remove: " + removeItem.title
     );
     if (isConfirm) {
-      this.taskService.removeTask(removeItem)
+      this.taskService.removeTask(this.newTask.date,removeItem)
     }
   }
 }
